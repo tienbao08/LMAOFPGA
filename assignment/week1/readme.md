@@ -52,7 +52,7 @@ import cv2
 
 vid_width = 640
 vid_height = 480
-cap = cv2.VideoCapture(0) # changne 0 to other video file to read a video
+cap = cv2.VideoCapture(0) # change 0 to other video file to read a video
 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
 out = cv2.VideoWriter("output_webcam.mp4", fourcc, 15, (vid_width, vid_height))
 while(cap.isOpened()):
