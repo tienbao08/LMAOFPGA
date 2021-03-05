@@ -5,19 +5,17 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#Setup Environment">Setup Environment</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
+    <li><a href="#Setup Environment">Setup Environment</a></li>
+        <ul>
+            <li><a href="#Create Github repo">Create Github repo</a></li>
+        </ul>
+        <ul>
+            <li><a href="#Install Ubuntu Desktop">Install Ubuntu Desktop</a></li>
+        </ul>
+        <ul>
+            <li><a href="#Install Python and Opencv">Install Python and Opencv</a></li>
+        </ul>
+    <li><a href="#Read, write and display video from webcam using opencv">Read, write and display video from webcam using opencv</a></li>
   </ol>
 </details>
 
