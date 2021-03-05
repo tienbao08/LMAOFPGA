@@ -47,7 +47,7 @@ pip install opencv-python
 
 
 ## Read, write, display video from webcam using opencv
-```sh
+```python
 import cv2
 
 vid_width = 640
@@ -69,7 +69,8 @@ out.release()
 cv2.destroyAllWindows()
 ```
 *RESULT*
-*[Result](output_webcam.gif)
+
+![Result](output_webcam.gif)
 
 
 
