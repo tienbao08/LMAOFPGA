@@ -31,10 +31,10 @@ Group choose Ubuntu 20.04 LTS (Focal Fossa) and install on a physical PC.
 
 ### Install Python and Opencv
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+* [Python environment](https://www.python.org/downloads/)
+* [Python IDE](https://www.jetbrains.com/pycharm/download/#section=linux)
 
-### Installation
+```sh
+# Install pycharm on ubuntu using snap
+sudo snap install pycharm-community --classic
+```
