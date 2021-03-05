@@ -4,7 +4,7 @@ vid_width = 640
 vid_height = 480
 cap = cv2.VideoCapture(0)
 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
-out = cv2.VideoWriter("output.mp4", fourcc, 15, (vid_width, vid_height))
+out = cv2.VideoWriter("output_webcam.mp4", fourcc, 15, (vid_width, vid_height))
 while(cap.isOpened()):
     ret, frame = cap.read()
     if ret == True:
