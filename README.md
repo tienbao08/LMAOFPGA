@@ -1,2 +1,2 @@
 # LMAOFPGA
-CE434 Project repo
+CE434 project repo
