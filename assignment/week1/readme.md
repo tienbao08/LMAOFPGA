@@ -30,6 +30,7 @@
 Group choose Ubuntu 20.04 LTS (Focal Fossa) and install on a physical PC.
 * [Ubuntu](https://ubuntu.com/download/desktop)
 
+<!-- Install Python and Opencv -->
 ### Install Python and Opencv
 
 * [Python environment](https://www.python.org/downloads/)
