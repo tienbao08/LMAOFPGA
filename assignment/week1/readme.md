@@ -68,8 +68,8 @@ cap.release()
 out.release()
 cv2.destroyAllWindows()
 ```
-
-![Result](output_webcam.gif)
+*RESULT*
+*[Result](output_webcam.gif)
 
 
 
