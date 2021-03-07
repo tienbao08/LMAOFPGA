@@ -20,7 +20,7 @@
 </details>
 
 
-## Setup Environment
+## 1. Setup Environment
 ### Create Github repo
 
 * [Github repo](https://github.com/tienbao08/LMAOFPGA)
@@ -46,7 +46,7 @@ pip install opencv-python
 ```
 
 
-## Read, write, display video from webcam using opencv
+## 2. Read, write, display video from webcam using opencv
 ```python
 import cv2
 
