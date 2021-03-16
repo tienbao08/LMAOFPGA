@@ -68,7 +68,7 @@ Export every pixel value of 3 RGB channels and gray channel into separate txt fi
 >Teminal command: python3 main.py gray_ieee754.txt (or every other txt contain ieee754 format numbers)
 
 ### TXT2IMAGE
-
+_Gray version_
 ```py
 import numpy as np
 from matplotlib import pyplot as plt
@@ -89,6 +89,8 @@ if __name__ == "__main__":
     fire.Fire(processing)
 
 ```
+Read txt file contain pixel value and display image.
+>Terminal command python3 reverse.py test_gray.txt
 # 2. Images processin via HDL
 
 
