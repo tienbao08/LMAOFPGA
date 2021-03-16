@@ -58,8 +58,8 @@ if __name__ == '__main__':
     fire.Fire(rgb2gray)
 
 ```
->Export every pixel value of 3 RGB channels and gray channel into separate txt files.
-Terminal command: python 3 rgb2gray.py test.jpg (or every other URL of images)
+Export every pixel value of 3 RGB channels and gray channel into separate txt files.
+>Terminal command: python 3 rgb2gray.py test.jpg (or every other URL of images)
 ### IEEE754 converter tool (Single precision)
 * [Dec_to_Bin32] (https://github.com/tienbao08/ieee754tobin)
 >Terminal command: python3 main.py gray.txt (or every other txt contain dec format numbers)
@@ -89,7 +89,7 @@ if __name__ == "__main__":
     fire.Fire(processing)
 
 ```
-# Images processin via HDL
+# 2. Images processin via HDL
 
 
 
