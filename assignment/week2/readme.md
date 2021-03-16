@@ -17,6 +17,9 @@
             <li><a href="#TXT2IMAGE">TXT2IMAGE</a></li>
         </ul>
     <li><a href="Images procssing via HDL">Images procssing via HDL</a></li>
+    <ul>
+            <li><a href="Datapath">Datapath</a></li>
+        </ul>
   </ol>
 </details>
 
@@ -93,7 +96,7 @@ Read txt file contain pixel value and display image.
 >Terminal command: python3 reverse.py test_gray.txt
 # 2. Images processin via HDL
 ## Datapath
-![Result](datapath.jpg)
+![Datapath](datapath.jpg)
 
 
 
