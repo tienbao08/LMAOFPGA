@@ -17,9 +17,6 @@
             <li><a href="#TXT2IMAGE">TXT2IMAGE</a></li>
         </ul>
     <li><a href="Images procssing via HDL">Images procssing via HDL</a></li>
-    <ul>
-            <li><a href="Datapath">Datapath</a></li>
-        </ul>
   </ol>
 </details>
 
@@ -64,10 +61,10 @@ if __name__ == '__main__':
 Export every pixel value of 3 RGB channels and gray channel into separate txt files.
 >Terminal command: python 3 rgb2gray.py test.jpg (or every other URL of images)
 ### IEEE754 converter tool (Single precision)
-* [Dec_to_Bin32](https://github.com/tienbao08/ieee754tobin)
+* [Dec_to_Bin32] (https://github.com/tienbao08/ieee754tobin)
 >Terminal command: python3 main.py gray.txt (or every other txt contain dec format numbers)
 
-* [Bin32_to_Dec](https://github.com/tienbao08/bintodec)
+* [Bin32_to_Dec] (https://github.com/tienbao08/bintodec)
 >Teminal command: python3 main.py gray_ieee754.txt (or every other txt contain ieee754 format numbers)
 
 ### TXT2IMAGE
@@ -96,7 +93,23 @@ Read txt file contain pixel value and display image.
 >Terminal command: python3 reverse.py test_gray.txt
 # 2. Images processin via HDL
 ## Datapath
-![Datapath](datapath.jpg)
+![Result](datapath.jpg)
+>Flow chart:
+>step1: input R, G, B color level by ieee754
+>step2: a = 0.299R
+>step3: b = 0.587G
+>step4: c = 0.114B
+>step5: x = a + b
+>step6: Y = x + c
+
+>Sharing Register:
+>R1 = {R_in, b, x}
+>R2 = {0.299, 0.114, G_in, a, c, }
+>R3 = {0.587, B_in}
+
+
+
+
 
 
 
