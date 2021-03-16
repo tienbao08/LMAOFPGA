@@ -16,7 +16,7 @@
         <ul>
             <li><a href="#TXT2IMAGE">TXT2IMAGE</a></li>
         </ul>
-    <li><a href="Images procssing via HDL">Images procssing via HD</a></li>
+    <li><a href="Images procssing via HDL">Images procssing via HDL</a></li>
   </ol>
 </details>
 
