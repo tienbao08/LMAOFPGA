@@ -64,10 +64,10 @@ if __name__ == '__main__':
 Export every pixel value of 3 RGB channels and gray channel into separate txt files.
 >Terminal command: python 3 rgb2gray.py test.jpg (or every other URL of images)
 ### IEEE754 converter tool (Single precision)
-* [Dec_to_Bin32] (https://github.com/tienbao08/ieee754tobin)
+* [Dec_to_Bin32](https://github.com/tienbao08/ieee754tobin)
 >Terminal command: python3 main.py gray.txt (or every other txt contain dec format numbers)
 
-* [Bin32_to_Dec] (https://github.com/tienbao08/bintodec)
+* [Bin32_to_Dec](https://github.com/tienbao08/bintodec)
 >Teminal command: python3 main.py gray_ieee754.txt (or every other txt contain ieee754 format numbers)
 
 ### TXT2IMAGE
