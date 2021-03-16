@@ -24,6 +24,7 @@ def rgb2gray(stockimg):
         f.write("\n".join(map(str, green)))
     with open(r'blue.txt', 'w') as f:
         f.write("\n".join(map(str, blue)))
+    f.close()
     print(red, green, blue, gray_pix)
 
 
