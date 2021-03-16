@@ -95,17 +95,17 @@ Read txt file contain pixel value and display image.
 ## Datapath
 ![Result](datapath.jpg)
 >Flow chart:
->step1: input R, G, B color level by ieee754
->step2: a = 0.299R
->step3: b = 0.587G
->step4: c = 0.114B
->step5: x = a + b
->step6: Y = x + c
+step1: input R, G, B color level by ieee754
+step2: a = 0.299R
+step3: b = 0.587G
+step4: c = 0.114B
+step5: x = a + b
+step6: Y = x + c
 
->Sharing Register:
->R1 = {R_in, b, x}
->R2 = {0.299, 0.114, G_in, a, c, }
->R3 = {0.587, B_in}
+Sharing Register:
+R1 = {R_in, b, x}
+R2 = {0.299, 0.114, G_in, a, c, }
+R3 = {0.587, B_in}
 
 
 
