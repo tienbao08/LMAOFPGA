@@ -94,8 +94,9 @@ Read txt file contain pixel value and display image.
 # 2. Images processin via HDL
 ## Datapath
 ![Result](datapath.jpg)
->Flow chart:
-step1: input R, G, B color level by ieee754
+>Flow chart: 
+
+>step1: input R, G, B color level by ieee754
 step2: a = 0.299R
 step3: b = 0.587G
 step4: c = 0.114B
