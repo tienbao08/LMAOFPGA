@@ -93,7 +93,7 @@ Read txt file contain pixel value and display image.
 >Terminal command: python3 reverse.py test_gray.txt
 # 2. Images processin via HDL
 ## Datapath
-![Datapath] (datapath.JPG)
+![Datapath] (datapath.jpg)
 
 
 
