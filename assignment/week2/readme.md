@@ -16,7 +16,10 @@
         <ul>
             <li><a href="#TXT2IMAGE">TXT2IMAGE</a></li>
         </ul>
-    <li><a href="Images procssing via HDL">Images procssing via HDL</a></li>
+    <li><a href="#Images procssing via HDL">Images procssing via HDL</a></li>
+        <ul>
+            <li><a href="#Datapath">Datapath</a></li>
+        </ul>
   </ol>
 </details>
 
@@ -106,7 +109,7 @@ step6: Y = x + c
 ```sh
 Sharing Register:
 R1 = {R_in, b, x}
-R2 = {0.299, 0.114, G_in, a, c, }
+R2 = {0.299, 0.114, G_in, a, c}
 R3 = {0.587, B_in}
 ```
 
