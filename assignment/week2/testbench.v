@@ -37,7 +37,7 @@ module testbench();
         rst = 1'b1;
         for(i=0;i<=519360;i=i+1) begin
             $fscanf(red_data, "%d\n", red);
-		    $fscanf(green_data, "%d\n", green);
+		$fscanf(green_data, "%d\n", green);
 		    $fscanf(blue_data, "%d\n", blue);
 		    #50
 		    if(i == 519360) begin
