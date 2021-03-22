@@ -45,7 +45,7 @@ module rgb2gray_test();
 	    #50
 		if(i == 519360) begin
 		   $finish;
-		   end
+		end
 	end
     $fclose(red_data);
     $fclose(green_data);
