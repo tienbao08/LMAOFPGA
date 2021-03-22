@@ -40,13 +40,13 @@ module rgb2gray_test();
         rst = 1'b1;
         for(i=0;i<=591360;i=i+1) begin
             $fscanf(red_data, "%d\n", red);
-		    $fscanf(green_data, "%d\n", green);
-		    $fscanf(blue_data, "%d\n", blue);
-		    #50
-		    if(i == 519360) begin
-		      $finish;
-		    end
-		end
+	    $fscanf(green_data, "%d\n", green);
+	    $fscanf(blue_data, "%d\n", blue);
+	    #50
+		if(i == 519360) begin
+		   $finish;
+		   end
+	end
     $fclose(red_data);
     $fclose(green_data);
     $fclose(blue_data);
