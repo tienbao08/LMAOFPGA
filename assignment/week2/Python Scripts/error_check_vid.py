@@ -2,6 +2,7 @@ import numpy as np
 import cv2
 verilog_vid_gray = np.loadtxt("/home/nguyentienbao/Documents/PycharmProjects/images_processing/gray_frame_verilog/gray_verilog_frame.txt", dtype=int)
 cv_gray = np.loadtxt("/home/nguyentienbao/Documents/PycharmProjects/images_processing/gray_frame/gray_all_frame.txt", dtype=int)
+
 index = [0, 1]
 verilog_vid_gray = np.delete(verilog_vid_gray, index)
 verilog_vid_gray = verilog_vid_gray[: len(verilog_vid_gray) - 141]
