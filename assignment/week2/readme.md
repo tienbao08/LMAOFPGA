@@ -96,7 +96,7 @@ Read txt file contain pixel value and display image.
 >Terminal command: python3 reverse.py test_gray.txt
 # 2. Images processing via HDL
 ## Idea for RTL module
- - Y = 19589*red + 38469*green + 7471*blue
+ - Y = 19589 x red + 38469 x green + 7471 x blue
  - Y >> 16
 ### Board used: Ultra96 v2
 ## Block design: 
