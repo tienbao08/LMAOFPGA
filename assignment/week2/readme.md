@@ -104,7 +104,7 @@ Read txt file contain pixel value and display image.
  - 24-bit RGB input (8-bit Red, 8-bit Green, 8-bit Blue)
  - 8-bit GrayScale output
 ## Diagram:
-
+![Diagram](https://user-images.githubusercontent.com/76895207/112758451-a95d2200-9018-11eb-942e-c7e3de2379d7.png)
 ## Schematic:
 ![Schematic](https://user-images.githubusercontent.com/76895207/112743851-1c3cad80-8fc5-11eb-90f9-ad5850893e08.png)
 ## Resource:
