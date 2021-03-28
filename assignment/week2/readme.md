@@ -94,9 +94,20 @@ if __name__ == "__main__":
 ```
 Read txt file contain pixel value and display image.
 >Terminal command: python3 reverse.py test_gray.txt
-# 2. Images processin via HDL
-## Datapath
+# 2. Images processing via HDL
+## Idea for RTL module
+ - Y = 19589*red + 38469*green + 7471*blue
+ - Y >> 16
+### Board used: Ultra96 v2
+## Block design: 
+ - 1 single cycle
+ - 24-bit RGB input (8-bit Red, 8-bit Green, 8-bit Blue)
+ - 8-bit GrayScale output
+## Diagram:
 
+## Schematic:
+
+## Resource:
 
 
 
