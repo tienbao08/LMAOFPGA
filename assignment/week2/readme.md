@@ -106,7 +106,7 @@ Read txt file contain pixel value and display image.
 ## Diagram:
 
 ## Schematic:
-
+![](assignment/week2/Dataset/Schematic.png)
 ## Resource:
 
 
