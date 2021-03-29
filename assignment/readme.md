@@ -1,3 +1,3 @@
-# Week1: _Finish_
+# Week1: _Finished_
 
-# Week2: _Ongoing_
+# Week2: _Finished_
