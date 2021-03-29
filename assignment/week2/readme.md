@@ -80,6 +80,11 @@ if __name__ == "__main__":
 ```
 Read txt file contain pixel value and display image.
 >Terminal command: python3 error_check.py test_gray.txt
+
+## RGB2GRAY_VID
+```py
+
+```
 # 2. Images processing via HDL
 ## Idea for RTL module
 > cv2.COLOR_BGR2GRAY original formula: Y = 0.299 x red + 0.587 x green + 0.114 x blue
