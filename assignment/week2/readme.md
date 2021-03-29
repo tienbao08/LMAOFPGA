@@ -70,26 +70,34 @@ Export every pixel value of 3 RGB channels and gray channel into separate txt fi
 * [Bin32_to_Dec] (https://github.com/tienbao08/bintodec)
 >Teminal command: python3 main.py gray_ieee754.txt (or every other txt contain ieee754 format numbers)
 
-### TXT2IMAGE
-_Gray version_
+### TXT2IMAGE:
 ```py
 import numpy as np
-from matplotlib import pyplot as plt
 import fire
-from PIL import Image
-w = 960
+import matplotlib.pyplot as plt
+import cv2
 h = 541
+w = 960
 
 
-def processing(txtfile):
-    arr = np.loadtxt(''.join(('', str(txtfile), '')))
-    newarr = arr.reshape(h, w)
-    plt.imshow(newarr, cmap='gray', vmin=0, vmax=255)
-    plt.show()
+def error_check(filename1, filename2):
+    cv_gray = np.loadtxt(''.join(('', str(filename1), '')), dtype=np.uint8)
+    hdl_gray = np.loadtxt(''.join(('', str(filename2), '')), dtype=np.uint8)
+    index = [0, 1]
+    hdl_gray = np.delete(hdl_gray, index)
+    error = cv_gray - hdl_gray
+    print("Max error: " + str(np.amax(error)))
+    cv_gray = cv_gray.reshape(h, w)
+    hdl_gray = hdl_gray.reshape(h, w)
+    cv2.imshow("cv_gray", cv_gray)
+    cv2.imshow("hdl_gray", hdl_gray)
+
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
 
 if __name__ == "__main__":
-    fire.Fire(processing)
+    fire.Fire(error_check)
 
 ```
 Read txt file contain pixel value and display image.
