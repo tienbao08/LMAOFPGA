@@ -2,28 +2,6 @@
 # Week 2
 ## Class Assignment
 
-
-<details open="open">
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#Images processing via Python">Images processing via Python</a></li>
-        <ul>
-            <li><a href="RGB2GRAY">RGB2GRAY</a></li>
-        </ul>
-        <ul>
-            <li><a href="#IEEE754 converter tool (Single precision)">IEEE754 converter tool (Single precision)</a></li>
-        </ul>
-        <ul>
-            <li><a href="#TXT2IMAGE">TXT2IMAGE</a></li>
-        </ul>
-    <li><a href="#Images procssing via HDL">Images procssing via HDL</a></li>
-        <ul>
-            <li><a href="#Datapath">Datapath</a></li>
-        </ul>
-  </ol>
-</details>
-
-
 ## 1. Images procssing via python
 ### RGB2GRAY
 ```py
