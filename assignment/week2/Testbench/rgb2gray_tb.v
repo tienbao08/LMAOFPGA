@@ -2,9 +2,10 @@
 //(1280 x 720 x 143) x 50ns = 6 589 440 000 ns
 
 module rgb2gray_tb();
-	reg clk, rst;
+	reg clk, rst, valid_in;
 	reg [7:0] red, green, blue;
 	wire [7:0] gray_pic;
+	wire valid_out;
 	
    integer red_data, green_data, blue_data, result, i;	
 	
@@ -12,9 +13,10 @@ module rgb2gray_tb();
         red_data = $fopen("/home/duc/Documents/RGBtoGRAY/Txtfiles/red_frame/all_red_frame.txt", "r");
         green_data = $fopen("/home/duc/Documents/RGBtoGRAY/Txtfiles/green_frame/all_green_frame.txt", "r");
         blue_data = $fopen("/home/duc/Documents/RGBtoGRAY/Txtfiles/blue_frame/all_blue_frame.txt", "r");
-	    result = $fopen("/home/duc/Documents/RGBtoGRAY/Txtfiles/gray_verilog_vid.txt", "w");
+        result = $fopen("/home/duc/Documents/RGBtoGRAY/Txtfiles/gray_verilog.txt", "w");
         clk = 1'b0;
         rst = 1'b1;
+        valid_in = 1'b1;
         #50
         rst = 1'b0;
         //1280 x 720 x 143 = 131 788 800
@@ -39,5 +41,5 @@ module rgb2gray_tb();
     end
 	 
 	//rgb2gray(clk, rst, red_in, green_in, blue_in, gray_out);
-	rgb2gray dut(clk, rst, red, green, blue, gray_pic);
+	rgb2gray dut(clk, rst, red, green, blue, gray_pic, valid_in, valid_out);
 endmodule
