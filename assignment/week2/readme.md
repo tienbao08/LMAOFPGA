@@ -208,6 +208,11 @@ if __name__ == '__main__':
  - Y = 19595 x red + 38469 x green + 7471 x blue
  - Y >> 16
  - Max error: 1 pixel value
+```sh
+Example: R = 49, G = 106, B = 16
+cv2 formula: 0.299 x 49 + 0.587 x 106 + 0.114 x 16 = 78.697 -> cv.imread = 78
+hdl formula: (19595 x 49 + 38469 x 106 + 7471 x 16) / 2^16 = 78.695 -> 78
+```
 ### Board used: Ultra96 v2
 ## Block design: 
  - 1 single cycle
