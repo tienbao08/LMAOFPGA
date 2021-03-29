@@ -97,13 +97,17 @@ Read txt file contain pixel value and display image.
 # 2. Images processing via HDL
 ## Idea for RTL module
 > cv2.COLOR_BGR2GRAY original formula: Y = 0.299 x red + 0.587 x green + 0.114 x blue
-```sh
 
-0.299 << 16 = 0.299 * 2^16 = 19595.264 = 19595 (integer)
-0.587 << 16 = 0.587 * 2^16 = 38469.632 = 38469 (integer)
-0.114 << 16 = 0.114 * 2^16 = 7471.104 = 7471 (integer)
 
-```
+> 0.299 << 16 = 0.299 * 2^16 = 19595.264 = 19595 (integer)
+
+
+> 0.587 << 16 = 0.587 * 2^16 = 38469.632 = 38469 (integer)
+
+
+> 0.114 << 16 = 0.114 * 2^16 = 7471.104 = 7471 (integer)
+
+
 ### Group choose left shift 16 becasue it gave the most accurate result.
  - Y = 19595 x red + 38469 x green + 7471 x blue
  - Y >> 16
