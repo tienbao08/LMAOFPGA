@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+//(1280 x 720 x 143) x 50ns = 6 589 440 000 ns
 
 module rgb2gray_tb();
 	reg clk, rst;
@@ -8,20 +9,21 @@ module rgb2gray_tb();
    integer red_data, green_data, blue_data, result, i;	
 	
     initial begin
-        red_data = $fopen("red.txt", "r");
-        green_data = $fopen("green.txt", "r");
-        blue_data = $fopen("blue.txt", "r");
-        result = $fopen("gray_verilog.txt", "w");
+        red_data = $fopen("/home/duc/Documents/RGBtoGRAY/Txtfiles/red_frame/all_red_frame.txt", "r");
+        green_data = $fopen("/home/duc/Documents/RGBtoGRAY/Txtfiles/green_frame/all_green_frame.txt", "r");
+        blue_data = $fopen("/home/duc/Documents/RGBtoGRAY/Txtfiles/blue_frame/all_blue_frame.txt", "r");
+        result = $fopen("/home/duc/Documents/RGBtoGRAY/Txtfiles/gray_verilog.txt", "w");
         clk = 1'b0;
         rst = 1'b1;
         #50
         rst = 1'b0;
-        for(i=0;i<=591360;i=i+1) begin
+        //1280 x 720 x 143 = 131 788 800
+        for(i=0;i<=131788800;i=i+1) begin
             $fscanf(red_data, "%d\n", red);
 	    $fscanf(green_data, "%d\n", green);
 	    $fscanf(blue_data, "%d\n", blue);
 	    #50
-	    if(i == 519360) begin
+	    if(i == 131788800) begin
 	    	$finish;
 	    end
 	end
