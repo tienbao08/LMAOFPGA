@@ -207,6 +207,7 @@ if __name__ == '__main__':
 ### Group choose left shift 16 becasue it gave the most accurate result.
  - Y = 19595 x red + 38469 x green + 7471 x blue
  - Y >> 16
+ - Max error: 1 pixel value
 ### Board used: Ultra96 v2
 ## Block design: 
  - 1 single cycle
