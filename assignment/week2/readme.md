@@ -81,7 +81,7 @@ if __name__ == "__main__":
 Read txt file contain pixel value and display image.
 >Terminal command: python3 error_check.py test_gray.txt
 
-### RGB2GRAY_VID
+### RGB2GRAY_VID to TXT
 ```py
 import numpy as np
 import cv2
