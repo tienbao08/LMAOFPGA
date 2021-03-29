@@ -12,7 +12,7 @@ module rgb2gray_tb();
         red_data = $fopen("/home/duc/Documents/RGBtoGRAY/Txtfiles/red_frame/all_red_frame.txt", "r");
         green_data = $fopen("/home/duc/Documents/RGBtoGRAY/Txtfiles/green_frame/all_green_frame.txt", "r");
         blue_data = $fopen("/home/duc/Documents/RGBtoGRAY/Txtfiles/blue_frame/all_blue_frame.txt", "r");
-        result = $fopen("/home/duc/Documents/RGBtoGRAY/Txtfiles/gray_verilog.txt", "w");
+	    result = $fopen("/home/duc/Documents/RGBtoGRAY/Txtfiles/gray_verilog_vid.txt", "w");
         clk = 1'b0;
         rst = 1'b1;
         #50
