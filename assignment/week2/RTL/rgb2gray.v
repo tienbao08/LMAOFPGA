@@ -34,7 +34,7 @@ module rgb2gray(clk, rst, red_in, green_in, blue_in, gray_out, valid_in, valid_o
 										  .in(blue)
 									    );
 	Mul Mul_Red_inst( .a(se_red_out),
-	                  .b(24'd19589),
+			 .b(24'd19595),
 					  .OUT(mul_red_out)
 					);
 	Mul Mul_Green_inst( .a(se_green_out),
