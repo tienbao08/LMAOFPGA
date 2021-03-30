@@ -7,7 +7,7 @@ module rgb2gray(clk, rst, red_in, green_in, blue_in, gray_out, valid_in, valid_o
 	
 	reg [7:0] red, green, blue;
 	
-	always @(posedge clk) begin
+	always @(posedge clk, posedge rst) begin
 		if(rst) begin
 			red <= 0;
 			green <= 0;
