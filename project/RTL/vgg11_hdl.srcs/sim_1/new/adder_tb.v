@@ -22,24 +22,24 @@
 
 module adder_tb();
 
-    reg [31:0] a_operand, b_operand;
-	wire [31:0] result;
+    reg [31:0] a, b;
+    wire [31:0] max;
     
-    divider uut(
-    a_operand,
-    b_operand,
-    result
+    maxab uut(
+    a,
+    b,
+    max
     );
     
 initial begin
-    a_operand = 32'h40d9999a;
-    b_operand = 32'hc0dccccd;
+    a = 32'h40d9999a;
+    b = 32'hc0dccccd;
     #50
-    a_operand = 32'h3f19999a;
-    b_operand = 32'h3f4ccccd;
+    a = 32'h3f19999a;
+    b = 32'h3f4ccccd;
     #50
-    a_operand = 32'h0;
-    b_operand = 32'h3f4ccccd;
+    a = 32'h0;
+    b = 32'h3f4ccccd;
     #50 $finish;
 end
 endmodule

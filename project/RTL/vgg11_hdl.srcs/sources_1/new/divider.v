@@ -63,7 +63,7 @@ assign operand_a_change = operand_a;
 multiplier x0(.a(32'hC00B_4B4B), .b(divisor), .out(Intermediate_X0));
 
 //32'h4034_B4B5 = 48/17
-adder X0(.a(Intermediate_X0), .b(32'h4034_B4B5) ,.out(Iteration_X0));
+adder X0(.a(Intermediate_X0), .b(32'h4034_B4B5) , .out(Iteration_X0));
 
 Iteration X1(.operand_1(Iteration_X0), .operand_2(divisor), .solution(Iteration_X1));
 
