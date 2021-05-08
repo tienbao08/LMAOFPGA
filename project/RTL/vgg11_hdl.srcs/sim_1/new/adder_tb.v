@@ -22,24 +22,22 @@
 
 module adder_tb();
 
-    reg [31:0] a, b;
-    wire [31:0] max;
+    reg [31:0] a, b, c, d;
+    wire [31:0] max_final;
     
-    maxab uut(
+    max_1in4 uut(
     a,
     b,
-    max
+    c,
+    d,
+    max_final
     );
     
 initial begin
-    a = 32'h40d9999a;
-    b = 32'hc0dccccd;
-    #50
-    a = 32'h3f19999a;
-    b = 32'h3f4ccccd;
-    #50
-    a = 32'h0;
-    b = 32'h3f4ccccd;
+    a = 32'h40dccccd;
+    b = 32'h40dfff2e;
+    c = 32'h0;
+    d = 32'h4101999a;
     #50 $finish;
 end
 endmodule
