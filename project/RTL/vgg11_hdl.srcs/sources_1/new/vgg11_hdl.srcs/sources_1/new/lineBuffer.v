@@ -1,0 +1,517 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 05/19/2021 06:24:32 PM
+// Design Name: 
+// Module Name: lineBuffer
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module lineBuffer(
+    dataIn,
+    clk,
+    counter,
+    rowcounter,
+    dataOut0,
+    dataOut1,
+    dataOut2,
+    dataOut3,
+    dataOut4,
+    dataOut5,
+    dataOut6,
+    dataOut7,
+    dataOut8
+    );
+    
+    input wire [31:0] dataIn;
+    input wire clk;
+    input wire [9:0] counter;
+    input wire [7:0] rowcounter;
+    output wire [31:0] dataOut0,
+                    dataOut1,
+                    dataOut2,
+                    dataOut3,
+                    dataOut4,
+                    dataOut5,
+                    dataOut6,
+                    dataOut7,
+                    dataOut8;
+    
+    reg [31:0] pos [0:450];
+    
+always @(posedge clk) begin
+    pos[450] <= dataIn;
+    pos[449] <= pos[450];
+    pos[448] <= pos[449];
+    pos[447] <= pos[448];
+    pos[446] <= pos[447];
+    pos[445] <= pos[446];
+    pos[444] <= pos[445];
+    pos[443] <= pos[444];
+    pos[442] <= pos[443];
+    pos[441] <= pos[442];
+    pos[440] <= pos[441];
+    pos[439] <= pos[440];
+    pos[438] <= pos[439];
+    pos[437] <= pos[438];
+    pos[436] <= pos[437];
+    pos[435] <= pos[436];
+    pos[434] <= pos[435];
+    pos[433] <= pos[434];
+    pos[432] <= pos[433];
+    pos[431] <= pos[432];
+    pos[430] <= pos[431];
+    pos[429] <= pos[430];
+    pos[428] <= pos[429];
+    pos[427] <= pos[428];
+    pos[426] <= pos[427];
+    pos[425] <= pos[426];
+    pos[424] <= pos[425];
+    pos[423] <= pos[424];
+    pos[422] <= pos[423];
+    pos[421] <= pos[422];
+    pos[420] <= pos[421];
+    pos[419] <= pos[420];
+    pos[418] <= pos[419];
+    pos[417] <= pos[418];
+    pos[416] <= pos[417];
+    pos[415] <= pos[416];
+    pos[414] <= pos[415];
+    pos[413] <= pos[414];
+    pos[412] <= pos[413];
+    pos[411] <= pos[412];
+    pos[410] <= pos[411];
+    pos[409] <= pos[410];
+    pos[408] <= pos[409];
+    pos[407] <= pos[408];
+    pos[406] <= pos[407];
+    pos[405] <= pos[406];
+    pos[404] <= pos[405];
+    pos[403] <= pos[404];
+    pos[402] <= pos[403];
+    pos[401] <= pos[402];
+    pos[400] <= pos[401];
+    pos[399] <= pos[400];
+    pos[398] <= pos[399];
+    pos[397] <= pos[398];
+    pos[396] <= pos[397];
+    pos[395] <= pos[396];
+    pos[394] <= pos[395];
+    pos[393] <= pos[394];
+    pos[392] <= pos[393];
+    pos[391] <= pos[392];
+    pos[390] <= pos[391];
+    pos[389] <= pos[390];
+    pos[388] <= pos[389];
+    pos[387] <= pos[388];
+    pos[386] <= pos[387];
+    pos[385] <= pos[386];
+    pos[384] <= pos[385];
+    pos[383] <= pos[384];
+    pos[382] <= pos[383];
+    pos[381] <= pos[382];
+    pos[380] <= pos[381];
+    pos[379] <= pos[380];
+    pos[378] <= pos[379];
+    pos[377] <= pos[378];
+    pos[376] <= pos[377];
+    pos[375] <= pos[376];
+    pos[374] <= pos[375];
+    pos[373] <= pos[374];
+    pos[372] <= pos[373];
+    pos[371] <= pos[372];
+    pos[370] <= pos[371];
+    pos[369] <= pos[370];
+    pos[368] <= pos[369];
+    pos[367] <= pos[368];
+    pos[366] <= pos[367];
+    pos[365] <= pos[366];
+    pos[364] <= pos[365];
+    pos[363] <= pos[364];
+    pos[362] <= pos[363];
+    pos[361] <= pos[362];
+    pos[360] <= pos[361];
+    pos[359] <= pos[360];
+    pos[358] <= pos[359];
+    pos[357] <= pos[358];
+    pos[356] <= pos[357];
+    pos[355] <= pos[356];
+    pos[354] <= pos[355];
+    pos[353] <= pos[354];
+    pos[352] <= pos[353];
+    pos[351] <= pos[352];
+    pos[350] <= pos[351];
+    pos[349] <= pos[350];
+    pos[348] <= pos[349];
+    pos[347] <= pos[348];
+    pos[346] <= pos[347];
+    pos[345] <= pos[346];
+    pos[344] <= pos[345];
+    pos[343] <= pos[344];
+    pos[342] <= pos[343];
+    pos[341] <= pos[342];
+    pos[340] <= pos[341];
+    pos[339] <= pos[340];
+    pos[338] <= pos[339];
+    pos[337] <= pos[338];
+    pos[336] <= pos[337];
+    pos[335] <= pos[336];
+    pos[334] <= pos[335];
+    pos[333] <= pos[334];
+    pos[332] <= pos[333];
+    pos[331] <= pos[332];
+    pos[330] <= pos[331];
+    pos[329] <= pos[330];
+    pos[328] <= pos[329];
+    pos[327] <= pos[328];
+    pos[326] <= pos[327];
+    pos[325] <= pos[326];
+    pos[324] <= pos[325];
+    pos[323] <= pos[324];
+    pos[322] <= pos[323];
+    pos[321] <= pos[322];
+    pos[320] <= pos[321];
+    pos[319] <= pos[320];
+    pos[318] <= pos[319];
+    pos[317] <= pos[318];
+    pos[316] <= pos[317];
+    pos[315] <= pos[316];
+    pos[314] <= pos[315];
+    pos[313] <= pos[314];
+    pos[312] <= pos[313];
+    pos[311] <= pos[312];
+    pos[310] <= pos[311];
+    pos[309] <= pos[310];
+    pos[308] <= pos[309];
+    pos[307] <= pos[308];
+    pos[306] <= pos[307];
+    pos[305] <= pos[306];
+    pos[304] <= pos[305];
+    pos[303] <= pos[304];
+    pos[302] <= pos[303];
+    pos[301] <= pos[302];
+    pos[300] <= pos[301];
+    pos[299] <= pos[300];
+    pos[298] <= pos[299];
+    pos[297] <= pos[298];
+    pos[296] <= pos[297];
+    pos[295] <= pos[296];
+    pos[294] <= pos[295];
+    pos[293] <= pos[294];
+    pos[292] <= pos[293];
+    pos[291] <= pos[292];
+    pos[290] <= pos[291];
+    pos[289] <= pos[290];
+    pos[288] <= pos[289];
+    pos[287] <= pos[288];
+    pos[286] <= pos[287];
+    pos[285] <= pos[286];
+    pos[284] <= pos[285];
+    pos[283] <= pos[284];
+    pos[282] <= pos[283];
+    pos[281] <= pos[282];
+    pos[280] <= pos[281];
+    pos[279] <= pos[280];
+    pos[278] <= pos[279];
+    pos[277] <= pos[278];
+    pos[276] <= pos[277];
+    pos[275] <= pos[276];
+    pos[274] <= pos[275];
+    pos[273] <= pos[274];
+    pos[272] <= pos[273];
+    pos[271] <= pos[272];
+    pos[270] <= pos[271];
+    pos[269] <= pos[270];
+    pos[268] <= pos[269];
+    pos[267] <= pos[268];
+    pos[266] <= pos[267];
+    pos[265] <= pos[266];
+    pos[264] <= pos[265];
+    pos[263] <= pos[264];
+    pos[262] <= pos[263];
+    pos[261] <= pos[262];
+    pos[260] <= pos[261];
+    pos[259] <= pos[260];
+    pos[258] <= pos[259];
+    pos[257] <= pos[258];
+    pos[256] <= pos[257];
+    pos[255] <= pos[256];
+    pos[254] <= pos[255];
+    pos[253] <= pos[254];
+    pos[252] <= pos[253];
+    pos[251] <= pos[252];
+    pos[250] <= pos[251];
+    pos[249] <= pos[250];
+    pos[248] <= pos[249];
+    pos[247] <= pos[248];
+    pos[246] <= pos[247];
+    pos[245] <= pos[246];
+    pos[244] <= pos[245];
+    pos[243] <= pos[244];
+    pos[242] <= pos[243];
+    pos[241] <= pos[242];
+    pos[240] <= pos[241];
+    pos[239] <= pos[240];
+    pos[238] <= pos[239];
+    pos[237] <= pos[238];
+    pos[236] <= pos[237];
+    pos[235] <= pos[236];
+    pos[234] <= pos[235];
+    pos[233] <= pos[234];
+    pos[232] <= pos[233];
+    pos[231] <= pos[232];
+    pos[230] <= pos[231];
+    pos[229] <= pos[230];
+    pos[228] <= pos[229];
+    pos[227] <= pos[228];
+    pos[226] <= pos[227];
+    pos[225] <= pos[226];
+    pos[224] <= pos[225];
+    pos[223] <= pos[224];
+    pos[222] <= pos[223];
+    pos[221] <= pos[222];
+    pos[220] <= pos[221];
+    pos[219] <= pos[220];
+    pos[218] <= pos[219];
+    pos[217] <= pos[218];
+    pos[216] <= pos[217];
+    pos[215] <= pos[216];
+    pos[214] <= pos[215];
+    pos[213] <= pos[214];
+    pos[212] <= pos[213];
+    pos[211] <= pos[212];
+    pos[210] <= pos[211];
+    pos[209] <= pos[210];
+    pos[208] <= pos[209];
+    pos[207] <= pos[208];
+    pos[206] <= pos[207];
+    pos[205] <= pos[206];
+    pos[204] <= pos[205];
+    pos[203] <= pos[204];
+    pos[202] <= pos[203];
+    pos[201] <= pos[202];
+    pos[200] <= pos[201];
+    pos[199] <= pos[200];
+    pos[198] <= pos[199];
+    pos[197] <= pos[198];
+    pos[196] <= pos[197];
+    pos[195] <= pos[196];
+    pos[194] <= pos[195];
+    pos[193] <= pos[194];
+    pos[192] <= pos[193];
+    pos[191] <= pos[192];
+    pos[190] <= pos[191];
+    pos[189] <= pos[190];
+    pos[188] <= pos[189];
+    pos[187] <= pos[188];
+    pos[186] <= pos[187];
+    pos[185] <= pos[186];
+    pos[184] <= pos[185];
+    pos[183] <= pos[184];
+    pos[182] <= pos[183];
+    pos[181] <= pos[182];
+    pos[180] <= pos[181];
+    pos[179] <= pos[180];
+    pos[178] <= pos[179];
+    pos[177] <= pos[178];
+    pos[176] <= pos[177];
+    pos[175] <= pos[176];
+    pos[174] <= pos[175];
+    pos[173] <= pos[174];
+    pos[172] <= pos[173];
+    pos[171] <= pos[172];
+    pos[170] <= pos[171];
+    pos[169] <= pos[170];
+    pos[168] <= pos[169];
+    pos[167] <= pos[168];
+    pos[166] <= pos[167];
+    pos[165] <= pos[166];
+    pos[164] <= pos[165];
+    pos[163] <= pos[164];
+    pos[162] <= pos[163];
+    pos[161] <= pos[162];
+    pos[160] <= pos[161];
+    pos[159] <= pos[160];
+    pos[158] <= pos[159];
+    pos[157] <= pos[158];
+    pos[156] <= pos[157];
+    pos[155] <= pos[156];
+    pos[154] <= pos[155];
+    pos[153] <= pos[154];
+    pos[152] <= pos[153];
+    pos[151] <= pos[152];
+    pos[150] <= pos[151];
+    pos[149] <= pos[150];
+    pos[148] <= pos[149];
+    pos[147] <= pos[148];
+    pos[146] <= pos[147];
+    pos[145] <= pos[146];
+    pos[144] <= pos[145];
+    pos[143] <= pos[144];
+    pos[142] <= pos[143];
+    pos[141] <= pos[142];
+    pos[140] <= pos[141];
+    pos[139] <= pos[140];
+    pos[138] <= pos[139];
+    pos[137] <= pos[138];
+    pos[136] <= pos[137];
+    pos[135] <= pos[136];
+    pos[134] <= pos[135];
+    pos[133] <= pos[134];
+    pos[132] <= pos[133];
+    pos[131] <= pos[132];
+    pos[130] <= pos[131];
+    pos[129] <= pos[130];
+    pos[128] <= pos[129];
+    pos[127] <= pos[128];
+    pos[126] <= pos[127];
+    pos[125] <= pos[126];
+    pos[124] <= pos[125];
+    pos[123] <= pos[124];
+    pos[122] <= pos[123];
+    pos[121] <= pos[122];
+    pos[120] <= pos[121];
+    pos[119] <= pos[120];
+    pos[118] <= pos[119];
+    pos[117] <= pos[118];
+    pos[116] <= pos[117];
+    pos[115] <= pos[116];
+    pos[114] <= pos[115];
+    pos[113] <= pos[114];
+    pos[112] <= pos[113];
+    pos[111] <= pos[112];
+    pos[110] <= pos[111];
+    pos[109] <= pos[110];
+    pos[108] <= pos[109];
+    pos[107] <= pos[108];
+    pos[106] <= pos[107];
+    pos[105] <= pos[106];
+    pos[104] <= pos[105];
+    pos[103] <= pos[104];
+    pos[102] <= pos[103];
+    pos[101] <= pos[102];
+    pos[100] <= pos[101];
+    pos[99] <= pos[100];
+    pos[98] <= pos[99];
+    pos[97] <= pos[98];
+    pos[96] <= pos[97];
+    pos[95] <= pos[96];
+    pos[94] <= pos[95];
+    pos[93] <= pos[94];
+    pos[92] <= pos[93];
+    pos[91] <= pos[92];
+    pos[90] <= pos[91];
+    pos[89] <= pos[90];
+    pos[88] <= pos[89];
+    pos[87] <= pos[88];
+    pos[86] <= pos[87];
+    pos[85] <= pos[86];
+    pos[84] <= pos[85];
+    pos[83] <= pos[84];
+    pos[82] <= pos[83];
+    pos[81] <= pos[82];
+    pos[80] <= pos[81];
+    pos[79] <= pos[80];
+    pos[78] <= pos[79];
+    pos[77] <= pos[78];
+    pos[76] <= pos[77];
+    pos[75] <= pos[76];
+    pos[74] <= pos[75];
+    pos[73] <= pos[74];
+    pos[72] <= pos[73];
+    pos[71] <= pos[72];
+    pos[70] <= pos[71];
+    pos[69] <= pos[70];
+    pos[68] <= pos[69];
+    pos[67] <= pos[68];
+    pos[66] <= pos[67];
+    pos[65] <= pos[66];
+    pos[64] <= pos[65];
+    pos[63] <= pos[64];
+    pos[62] <= pos[63];
+    pos[61] <= pos[62];
+    pos[60] <= pos[61];
+    pos[59] <= pos[60];
+    pos[58] <= pos[59];
+    pos[57] <= pos[58];
+    pos[56] <= pos[57];
+    pos[55] <= pos[56];
+    pos[54] <= pos[55];
+    pos[53] <= pos[54];
+    pos[52] <= pos[53];
+    pos[51] <= pos[52];
+    pos[50] <= pos[51];
+    pos[49] <= pos[50];
+    pos[48] <= pos[49];
+    pos[47] <= pos[48];
+    pos[46] <= pos[47];
+    pos[45] <= pos[46];
+    pos[44] <= pos[45];
+    pos[43] <= pos[44];
+    pos[42] <= pos[43];
+    pos[41] <= pos[42];
+    pos[40] <= pos[41];
+    pos[39] <= pos[40];
+    pos[38] <= pos[39];
+    pos[37] <= pos[38];
+    pos[36] <= pos[37];
+    pos[35] <= pos[36];
+    pos[34] <= pos[35];
+    pos[33] <= pos[34];
+    pos[32] <= pos[33];
+    pos[31] <= pos[32];
+    pos[30] <= pos[31];
+    pos[29] <= pos[30];
+    pos[28] <= pos[29];
+    pos[27] <= pos[28];
+    pos[26] <= pos[27];
+    pos[25] <= pos[26];
+    pos[24] <= pos[25];
+    pos[23] <= pos[24];
+    pos[22] <= pos[23];
+    pos[21] <= pos[22];
+    pos[20] <= pos[21];
+    pos[19] <= pos[20];
+    pos[18] <= pos[19];
+    pos[17] <= pos[18];
+    pos[16] <= pos[17];
+    pos[15] <= pos[16];
+    pos[14] <= pos[15];
+    pos[13] <= pos[14];
+    pos[12] <= pos[13];
+    pos[11] <= pos[12];
+    pos[10] <= pos[11];
+    pos[9] <= pos[10];
+    pos[8] <= pos[9];
+    pos[7] <= pos[8];
+    pos[6] <= pos[7];
+    pos[5] <= pos[6];
+    pos[4] <= pos[5];
+    pos[3] <= pos[4];
+    pos[2] <= pos[3];
+    pos[1] <= pos[2];
+    pos[0] <= pos[1];
+end
+assign dataOut0 = (counter <= 10'd450 || (rowcounter == 8'd222 && counter == 10'd450)) ? 32'h0 : pos[0];
+assign dataOut1 = (counter <= 10'd449) ? 32'h0 : pos[1];
+assign dataOut2 = (counter <= 10'd449 || counter == 10'd673) ? 32'h0 : pos[2];
+assign dataOut3 = (counter <= 10'd226 || counter == 10'd450 || (rowcounter == 8'd222 && counter == 10'd450)) ? 32'h0 : pos[224];
+assign dataOut4 = (counter < 10'd226) ? 32'h0 : pos[225];
+assign dataOut5 = (counter < 10'd226 || counter == 10'd449 || counter == 10'd673) ? 32'h0 : pos[226];
+assign dataOut6 = (counter <= 10'd226 || counter == 10'd450 || (rowcounter == 8'd222 && counter >= 10'd450)) ? 32'h0 : pos[448];
+assign dataOut7 = (counter < 10'd226 || (rowcounter == 8'd222 && counter >= 10'd450)) ? 32'h0 : pos[449];
+assign dataOut8 = (counter < 10'd226 || counter == 10'd449 || counter == 10'd673 || (rowcounter == 8'd222 && counter >= 10'd450)) ? 32'h0 : pos[450];
+endmodule
