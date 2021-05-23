@@ -68,7 +68,7 @@ always @(*) begin
             max_final = max2;
         end
     end
-    else if(max1[31] > max2[31]) begin
+    else if(max1[31] == 1'b0 && max2[31] == 1'b1) begin
         max_final = max1;
     end
     else begin

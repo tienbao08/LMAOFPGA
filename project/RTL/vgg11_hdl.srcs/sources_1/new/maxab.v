@@ -53,7 +53,7 @@ always @(*) begin
             max = b;
         end
     end
-    else if(a[31] > b[31]) begin
+    else if(a[31] == 1'b0 && b[31] == 1'b1) begin
         max = a;
     end
     else begin
