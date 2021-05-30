@@ -31,49 +31,41 @@ module maxab(
     
 always @(*) begin
     if(a[31] == 1'b0 && b[31] == 1'b0) begin
-        if(a[30:23] > b[30:23] && a[22:0] > b[22:0]) begin
+        if(a[30:23] > b[30:23]) begin
             max = a;
         end
-        else if(a[30:23] < b[30:23] && a[22:0] < b[22:0]) begin
+        else if(a[30:23] < b[30:23]) begin
             max = b;
-        end
-        else if(a[30:23] == b[30:23] && a[22:0] == b[22:0]) begin
-            max = a;
-        end
-        else if(a[30:23] == b[30:23] && a[22:0] > b[22:0]) begin
-            max = a;
-        end
-        else if(a[30:23] == b[30:23] && a[22:0] < b[22:0]) begin
-            max = b;
-        end
-        else if(a[30:23] > b[30:23] && a[22:0] == b[22:0]) begin
-            max = a;
         end
         else begin
-            max = b;
+            if(a[22:0] > b[22:0]) begin
+                max = a;
+            end
+            else if(a[22:0] < b[22:0]) begin
+                max = b;
+            end
+            else begin
+                max = a;
+            end
         end
     end
     else if(a[31] == 1'b1 && b[31] == 1'b1) begin
-        if(a[30:23] > b[30:23] && a[22:0] > b[22:0]) begin
+        if(a[30:23] > b[30:23]) begin
             max = b;
         end
-        else if(a[30:23] < b[30:23] && a[22:0] < b[22:0]) begin
+        else if(a[30:23] < b[30:23]) begin
             max = a;
-        end
-        else if(a[30:23] == b[30:23] && a[22:0] == b[22:0]) begin
-            max = b;
-        end
-        else if(a[30:23] == b[30:23] && a[22:0] > b[22:0]) begin
-            max = b;
-        end
-        else if(a[30:23] == b[30:23] && a[22:0] < b[22:0]) begin
-            max = a;
-        end
-        else if(a[30:23] > b[30:23] && a[22:0] == b[22:0]) begin
-            max = b;
         end
         else begin
-            max = a;
+            if(a[22:0] > b[22:0]) begin
+                max = b;
+            end
+            else if(a[22:0] < b[22:0]) begin
+                max = a;
+            end
+            else begin
+                max = b;
+            end
         end
     end
     else if(a[31] == 1'b0 && b[31] == 1'b1) begin
