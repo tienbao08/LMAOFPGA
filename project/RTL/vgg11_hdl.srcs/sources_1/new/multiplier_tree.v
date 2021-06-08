@@ -38,7 +38,16 @@ module multiplier_tree(
     in_mul5,
     in_mul6,
     in_mul7,
-    in_mul8
+    in_mul8,
+    in_weight0,
+    in_weight1,
+    in_weight2,
+    in_weight3,
+    in_weight4,
+    in_weight5,
+    in_weight6,
+    in_weight7,
+    in_weight8
     );
     
     input wire [31:0] in_mul0,
@@ -50,6 +59,16 @@ module multiplier_tree(
                     in_mul6,
                     in_mul7,
                     in_mul8;
+                    
+    input wire [31:0] in_weight0,
+                    in_weight1,
+                    in_weight2,
+                    in_weight3,
+                    in_weight4,
+                    in_weight5,
+                    in_weight6,
+                    in_weight7,
+                    in_weight8;
     
     output wire [31:0] mul0, 
                     mul1,
@@ -63,55 +82,55 @@ module multiplier_tree(
  
 multiplier m0(
     .a(in_mul0),
-    .b(32'hbf800000),
+    .b(in_weight0),
     .out(mul0)
 );
 
 multiplier m1(
     .a(in_mul1),
-    .b(32'h0),
+    .b(in_weight1),
     .out(mul1)
 );
 
 multiplier m2(
     .a(in_mul2),
-    .b(32'h3f800000),
+    .b(in_weight2),
     .out(mul2)
 );
 
 multiplier m3(
     .a(in_mul3),
-    .b(32'hc0000000),
+    .b(in_weight3),
     .out(mul3)
 );    
 
 multiplier m4(
     .a(in_mul4),
-    .b(32'h0),
+    .b(in_weight4),
     .out(mul4)
 );    
 
 multiplier m5(
     .a(in_mul5),
-    .b(32'h40000000),
+    .b(in_weight5),
     .out(mul5)
 );    
 
 multiplier m6(
     .a(in_mul6),
-    .b(32'hbf800000),
+    .b(in_weight6),
     .out(mul6)
 );   
 
 multiplier m7(
     .a(in_mul7),
-    .b(32'h0),
+    .b(in_weight7),
     .out(mul7)
 );   
 
 multiplier m8(
     .a(in_mul8),
-    .b(32'h3f800000),
+    .b(in_weight8),
     .out(mul8)
 );
 endmodule

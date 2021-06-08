@@ -30,7 +30,16 @@ module conv_core(
     in5,
     in6,
     in7,
-    in8
+    in8,
+    in_weight0,
+    in_weight1,
+    in_weight2,
+    in_weight3,
+    in_weight4,
+    in_weight5,
+    in_weight6,
+    in_weight7,
+    in_weight8
     );
     
     input wire [31:0] in0,
@@ -42,6 +51,16 @@ module conv_core(
                     in6,
                     in7,
                     in8;
+                    
+    input wire [31:0] in_weight0,
+                    in_weight1,
+                    in_weight2,
+                    in_weight3,
+                    in_weight4,
+                    in_weight5,
+                    in_weight6,
+                    in_weight7,
+                    in_weight8;
     
     output wire [31:0] result;
     
@@ -73,7 +92,16 @@ multiplier_tree mt0(
     .in_mul5(in5),
     .in_mul6(in6),
     .in_mul7(in7),
-    .in_mul8(in8)
+    .in_mul8(in8),
+    .in_weight0(in_weight0),
+    .in_weight1(in_weight1),
+    .in_weight2(in_weight2),
+    .in_weight3(in_weight3),
+    .in_weight4(in_weight4),
+    .in_weight5(in_weight5),
+    .in_weight6(in_weight6),
+    .in_weight7(in_weight7),
+    .in_weight8(in_weight8)
     );
     
 adder_tree at0(
