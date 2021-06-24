@@ -1,4 +1,4 @@
-module Adder_fp(
+module adder(
     a,
     b,
     out
