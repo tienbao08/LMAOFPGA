@@ -1,4 +1,5 @@
 //BRAM 256 x 32bit
+`timescale 1ns / 1ps 
 module BRAM_256
 #(
 	parameter DATA_WIDTH = 32,
