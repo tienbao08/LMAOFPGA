@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps 
+
 module Status_Signal_16384
 
 #(
