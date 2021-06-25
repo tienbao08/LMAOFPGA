@@ -1,5 +1,7 @@
 //Frame width = 224 x 224 = 50176
 //Output start affter 12544 clock, done after 245 clock
+`timescale 1ns / 1ps 
+
 module MaxPooling_224_to_112
 #(
 	parameter DATA_WIDTH = 32,
