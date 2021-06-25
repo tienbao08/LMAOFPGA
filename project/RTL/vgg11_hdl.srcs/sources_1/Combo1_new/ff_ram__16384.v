@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps 
+
 module ff_ram_16384
 	#(parameter DATA_WIDTH = 32,
 	  parameter ADDR_WIDTH = 14,
