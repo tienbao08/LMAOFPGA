@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps 
+
 module Pool_Buffer_222
 #(
 	//For counting column, row & count_clk
