@@ -1,5 +1,7 @@
 //REMEMBER: Write counter pointer in has 1 bit larger address of ff_ram, if ADDR_WIDTH = 14, wptr has 15 bit
 //Write_Pointer count 2^14 = 16384
+`timescale 1ns / 1ps 
+
 module Write_Pointer_16384
 
 #(
