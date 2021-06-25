@@ -1,5 +1,6 @@
 //Line_Buffer 222 x 32bit
-	
+`timescale 1ns / 1ps 
+
 module Line_Buffer_222
 #(
 	parameter DATA_WIDTH = 32,
