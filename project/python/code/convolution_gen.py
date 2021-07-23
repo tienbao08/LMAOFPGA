@@ -1,5 +1,6 @@
 from datetime import datetime
 import math
+from tqdm import tqdm
 
 now = datetime.now()
 dateandtime = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -55,13 +56,13 @@ lineBuffer_custom.write(data_lineBuffer)
 lineBuffer.close()
 lineBuffer_custom.close()
 
-filters = 3
-layer = 0
-for maps in range(filters):
+filters = 2 #maps by mistake
+layer = 2
+for maps in tqdm(range(filters)):
     weightfilename = f"{layer}_{maps}"
     modulename_conv = f"conv_{imgsize}_weight{layer}_{maps}"
     weights = open(
-        f'/home/nguyentienbao/Documents/PycharmProjects/img_preprocessing/weight/weight_details/weight{weightfilename}_ieee754.txt',
+        f'/home/nguyentienbao/Documents/PycharmProjects/img_preprocessing/weight/weights_ieee754/weight{weightfilename}_ieee754.txt',
         'r')
     data_weights = weights.readlines()
     parameter_weight = ""
@@ -111,3 +112,68 @@ for maps in range(filters):
     conv_custom.write(data_conv)
     conv_custom.close()
     weights.close()
+
+biases = open(
+    f'/home/nguyentienbao/Documents/PycharmProjects/img_preprocessing/bias/bias_ieee754/bias2_ieee754.txt',
+    'r')
+data_biases = biases.readlines()
+parameter_bias = ""
+line = 0
+for lines in data_biases:
+    string = f"parameter in_bias{line} = 32'b{lines.strip()},\n\t"
+    parameter_bias = parameter_bias + string
+    line = line + 1
+parameter_bias = parameter_bias.rstrip('\t\n')
+bias_adder_inst = ""
+wire_result_final = ""
+final_result = ""
+final_conv_inst = ""
+dataIn = ""
+for conv_inst in range(filters):
+    string = f"dataIn{conv_inst},\n\t"
+    dataIn = dataIn + string
+    conv_inst_str = f"conv_112_weight2_{conv_inst} conv{conv_inst}(.counter(), .rowcounter(), .clk(clk), .rst(rst), .dataIn(dataIn{conv_inst}), .result0(result0_{conv_inst}), .result1(result1_{conv_inst}), .result2(result2_{conv_inst}), result3(result3_{conv_inst}));\n\n"
+    final_conv_inst = final_conv_inst + conv_inst_str
+final_conv_inst = final_conv_inst.strip()
+dataIn = dataIn.strip()
+dataIn = dataIn.rstrip(",")
+for bias in range(int(len(data_weights) / 9)):
+    string = f"final_result{bias},\n\t"
+    final_result = final_result + string
+    bias_adder = f"bias_adder_112_4 #(in_bias{bias})" \
+                 f"\n\tba{bias}(.result(result{bias}), .in_map0(result{bias}_0), .in_map1(result{bias}_1));\n\n"
+    bias_adder_inst = bias_adder_inst + bias_adder
+final_result = final_result.strip()
+final_result = final_result.rstrip(",")
+relu = "relu relu_inst [0:3](\n" \
+       "\t.out_conv({" + result + "}),\n\t.out_relu({" + final_result + "}));"
+for re in range(2):
+    for wire in range(4):
+        wire_result = f"result{wire}_{re},\n"
+        wire_result_final = wire_result_final + "\t" + wire_result
+wire_result_final = wire_result_final.rstrip('\n,')
+wire_result_final = wire_result_final.lstrip('\t')
+final_conv = open(
+    '/home/nguyentienbao/Documents/PycharmProjects/img_preprocessing/veriloggen/templates/conv_224_64.v',
+    'r')
+data_final_conv = final_conv.read()
+data_final_conv = data_final_conv.format(engineername=engineername,
+                                         dateandtime=dateandtime,
+                                         result=result,
+                                         projectname=projectname,
+                                         data_width=data_width,
+                                         parameter_bias=parameter_bias,
+                                         dataIn=dataIn,
+                                         final_conv_inst=final_conv_inst,
+                                         bias_adder_inst=bias_adder_inst,
+                                         wire_result_final=wire_result_final,
+                                         final_result=final_result,
+                                         relu=relu)
+final_conv_custom = open(
+    '/home/nguyentienbao/Documents/PycharmProjects/img_preprocessing/veriloggen/conv_112_4.v',
+    'w')
+final_conv_custom.write(data_final_conv)
+biases.close()
+final_conv.close()
+final_conv_custom.close()
+

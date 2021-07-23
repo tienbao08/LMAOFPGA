@@ -10,18 +10,19 @@ for file in filtered_files:
     os.remove(path_to_file)
 
 cnt = 0
-weight_layers = 11
+weight_layers = 6
 for layer in tqdm(range(weight_layers)):
     weight = np.load(
         '/home/nguyentienbao/Documents/PycharmProjects/img_preprocessing/weight/weight' + str(cnt) + '.npy')
-    for i in tqdm(range(weight.shape[1])):
-        for j in tqdm(range(len(weight))):
-            data = weight[j][i].flatten()
-            with open(
-                    r'/home/nguyentienbao/Documents/PycharmProjects/img_preprocessing/weight/weight_details/weight' + str(
-                        cnt) + '_' + str(i) + '.txt', 'a') as f:
-                f.write("\n".join(map(str, data)))
-                f.write('\n')
-                f.close()
+    if cnt <= 10:
+        for i in tqdm(range(weight.shape[1])):
+            for j in tqdm(range(len(weight))):
+                data = weight[j][i].flatten()
+                with open(
+                        r'/home/nguyentienbao/Documents/PycharmProjects/img_preprocessing/weight/weight_details/weight' + str(
+                            cnt) + '_' + str(i) + '.txt', 'a') as f:
+                    f.write("\n".join(map(str, data)))
+                    f.write('\n')
+                    f.close()
     cnt = cnt + 2
 f.close()
