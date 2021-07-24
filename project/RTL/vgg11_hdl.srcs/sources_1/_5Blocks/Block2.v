@@ -43,7 +43,7 @@ assign maxPool_reset = (count_clk < 17'd114) ? 1'b1 : 1'b0;
  
 conv_112_8 conv_112_8_dut(
 									.clk(clk),
-									.rst(rst),
+									.rst(!valid_in),
 									.dataIn0(in0),
 									.dataIn1(in1),
 									.dataIn2(in2),
