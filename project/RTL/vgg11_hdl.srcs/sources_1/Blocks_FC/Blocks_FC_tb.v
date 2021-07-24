@@ -3,7 +3,7 @@
 module Blocks_FC_tb
 #(
 	parameter clk_prd = 40;
-	parameter data_width = 32;
+	parameter DATA_WIDTH = 32;
 
 	parameter frame_in_width = 67281;  
 	parameter frame_out_width = 49;   
@@ -12,9 +12,9 @@ module Blocks_FC_tb
 ();
 	reg clk, rst;
 	//
-	reg [data_width-1:0] red_in;
-	reg [data_width-1:0] green_in;
-	reg [data_width-1:0] blue_in;
+	reg [DATA_WIDTH-1:0] red_in;
+	reg [DATA_WIDTH-1:0] green_in;
+	reg [DATA_WIDTH-1:0] blue_in;
 	//
 	wire [DATA_WIDTH-1:0] out0;
 	wire [DATA_WIDTH-1:0] out1;
