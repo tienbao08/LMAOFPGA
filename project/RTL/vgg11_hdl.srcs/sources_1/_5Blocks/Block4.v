@@ -85,7 +85,7 @@ conv_28_32
 conv_28_32_dut
 (
 	.clk(clk),
-	.rst(rst),
+	.rst(!valid_in),
 	//
 	.dataIn0(in0),
 	.dataIn1(in1),
