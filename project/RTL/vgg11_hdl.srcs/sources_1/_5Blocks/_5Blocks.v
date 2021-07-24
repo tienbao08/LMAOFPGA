@@ -3,7 +3,9 @@ module _5Blocks
     parameter data_width = 32
 )
 (
-	input clk, rst,
+	input clk, rst, 
+	input valid_in1, valid_in2, valid_in3, valid_in4, valid_in5,
+	//
 	input [data_width-1:0] red_in,
 	input [data_width-1:0] green_in,
 	input [data_width-1:0] blue_in,
@@ -82,26 +84,12 @@ wire [data_width-1:0] Block4_out0, Block4_out1, Block4_out2, Block4_out3, Block4
 							 Block4_out8, Block4_out9, Block4_out10, Block4_out11, Block4_out12, Block4_out13, Block4_out14, Block4_out15, 
 							 Block4_out16, Block4_out17, Block4_out18, Block4_out19, Block4_out20, Block4_out21, Block4_out22, Block4_out23, 
 							 Block4_out24, Block4_out25, Block4_out26, Block4_out27, Block4_out28, Block4_out29, Block4_out30, Block4_out31;
-
-wire valid_in1, valid_in2, valid_in3, valid_in4, valid_in5;
-
-Control
-Control_inst
-(
-	.clk(clk), .rst(rst),
-	//
-	.valid_Block1(valid_in1), 
-	.valid_Block2(valid_in2), 
-	.valid_Block3(valid_in3), 
-	.valid_Block4(valid_in4), 
-	.valid_Block5(valid_in5)
-);							 
-							 
+							 							 
 							 
 Block1
 Block1_inst
 (
-	.clk(clk), .rst(rst),
+    .clk(clk), .rst(rst),
 	 .valid_in(valid_in1),
     .red_in(red_in),
     .green_in(green_in),
@@ -116,7 +104,7 @@ Block1_inst
 Block2
 Block2_inst
 (
-	.clk(clk), .rst(rst),
+   .clk(clk), .rst(rst),
 	.valid_in(valid_in2),
 	//
 	.in0(Block1_out0),
@@ -137,7 +125,7 @@ Block2_inst
 Block3
 Block3_inst
 (
-	.clk(clk), .rst(rst),
+   .clk(clk), .rst(rst),
 	.valid_in(valid_in3),
 	//
 	.in0(Block2_out0),
@@ -170,7 +158,7 @@ Block3_inst
 Block4
 Block4_inst
 (
-	.clk(clk), .rst(rst),
+   .clk(clk), .rst(rst),
 	.valid_in(valid_in4),
 	//
 	.in0(Block3_out0),
@@ -227,7 +215,7 @@ Block4_inst
 Block5
 Block5_inst
 (
-	.clk(clk), .rst(rst),
+   .clk(clk), .rst(rst),
 	.valid_in(valid_in5),
 	//
 	.in0(Block4_out0),
