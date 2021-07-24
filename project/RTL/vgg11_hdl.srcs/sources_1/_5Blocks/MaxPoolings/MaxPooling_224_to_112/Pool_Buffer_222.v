@@ -26,21 +26,10 @@ module Pool_Buffer_222
 															.addrOUT()
 														);
 	assign o12 = line_Buffer_out;
-	//assign valid_out = ((col%2==1) && (row%2==0) && clk) ? 1'b1 : 1'b0;	
+	assign valid_out = ((col%2==1) && (row%2==0) && clk) ? 1'b1 : 1'b0;	
 	assign rowOUT = row;
 	assign colOUT = col;
 	assign count_clk_OUT = count_clk;
-
-	always @(posedge clk) 
-	begin: VALID
-		if ((col%2==1) && (row%2==0)) begin
-			valid_out = 1'b1;
-		end
-		else begin
-			valid_out = 1'b0;	
-		end
-	end
-	
 	
 	always @(posedge clk) 
 	begin: STRIDE_2
