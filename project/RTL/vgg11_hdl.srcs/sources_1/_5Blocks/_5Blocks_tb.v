@@ -2,12 +2,12 @@
 
 module _5Blocks_tb
 #(
-	parameter clk_prd = 40;
-	parameter data_width = 32;
+	parameter clk_prd = 40,
+	parameter data_width = 32,
 
-	parameter frame_in_width = 67280;  
-	parameter frame_out_width = 49;   
-	parameter num_step = frame_in_width + frame_out_width;
+	parameter frame_in_width = 67280, 
+	parameter frame_out_width = 49,   
+	parameter num_step = frame_in_width + frame_out_width
 )
 ();
 	reg clk, rst;
