@@ -2,14 +2,14 @@
 
 module Blocks_FC
 #(
-    parameter data_width = 32
+    parameter DATA_WIDTH = 32
 )
 (
 	input clk, rst,
 	//
-	input [data_width-1:0] red_in,
-	input [data_width-1:0] green_in,
-	input [data_width-1:0] blue_in,
+	input [DATA_WIDTH-1:0] red_in,
+	input [DATA_WIDTH-1:0] green_in,
+	input [DATA_WIDTH-1:0] blue_in,
 	//
 	output [DATA_WIDTH-1:0] out0,
 	output [DATA_WIDTH-1:0] out1,
