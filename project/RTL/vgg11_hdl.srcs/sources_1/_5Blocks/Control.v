@@ -16,7 +16,8 @@ module Control
 	output reg valid_Block2,
 	output reg valid_Block3,
 	output reg valid_Block4,
-	output reg valid_Block5
+	output reg valid_Block5,
+	output reg valid_RAM_FC
 );
 
 	reg [count_width-1:0] count_clk;
@@ -28,7 +29,8 @@ module Control
 			valid_Block2 = 0;
 			valid_Block3 = 0;
 			valid_Block4 = 0;
-			valid_Block5 = 0;		
+			valid_Block5 = 0;	
+			valid_RAM_FC = 0;
 		end
 		else begin
 			count_clk = count_clk + 17'd1;
@@ -38,6 +40,7 @@ module Control
 				valid_Block3 = 0;
 				valid_Block4 = 0;
 				valid_Block5 = 0;
+				valid_RAM_FC = 0;
 			end
 			else if ((count_clk >= 17'd50403) && (count_clk < 17'd63061)) begin
 				valid_Block1 = 1;
@@ -45,6 +48,7 @@ module Control
 				valid_Block3 = 0;
 				valid_Block4 = 0;
 				valid_Block5 = 0;
+				valid_RAM_FC = 0;
 			end
 			else if ((count_clk >= 17'd63061) && (count_clk < 17'd66255)) begin
 				valid_Block1 = 1;
@@ -52,6 +56,7 @@ module Control
 				valid_Block3 = 1;
 				valid_Block4 = 0;
 				valid_Block5 = 0;
+				valid_RAM_FC = 0;
 			end
 			else if ((count_clk >= 17'd66255) && (count_clk < 17'd67069)) begin
 				valid_Block1 = 1;
@@ -59,6 +64,7 @@ module Control
 				valid_Block3 = 1;
 				valid_Block4 = 1;
 				valid_Block5 = 0;
+				valid_RAM_FC = 0;
 			end
 			else if ((count_clk >= 17'd67069) && (count_clk < 17'd67281)) begin
 				valid_Block1 = 1;
@@ -66,6 +72,7 @@ module Control
 				valid_Block3 = 1;
 				valid_Block4 = 1;
 				valid_Block5 = 1;
+				valid_RAM_FC = 0;
 			end
 			else if ((count_clk >= 17'd67281) && (count_clk < 17'd67330)) begin
 				valid_Block1 = 1;
@@ -73,6 +80,7 @@ module Control
 				valid_Block3 = 1;
 				valid_Block4 = 1;
 				valid_Block5 = 1;
+				valid_RAM_FC = 1;
 			end
 			else if (count_clk >= 17'd67330) begin
 				count_clk = 17'd67281;
