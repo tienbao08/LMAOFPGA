@@ -88,7 +88,7 @@ wire valid_in1, valid_in2, valid_in3, valid_in4, valid_in5;
 Control
 Control_inst
 (
-	.clk(clk), rst(rst),
+	.clk(clk), .rst(rst),
 	//
 	.valid_Block1(valid_in1), 
 	.valid_Block2(valid_in2), 
@@ -101,7 +101,7 @@ Control_inst
 Block1
 Block1_inst
 (
-    .clk(clk), rst(rst),
+	.clk(clk), .rst(rst),
 	 .valid_in(valid_in1),
     .red_in(red_in),
     .green_in(green_in),
@@ -116,7 +116,7 @@ Block1_inst
 Block2
 Block2_inst
 (
-   .clk(clk), rst(rst),
+	.clk(clk), .rst(rst),
 	.valid_in(valid_in2),
 	//
 	.in0(Block1_out0),
@@ -137,7 +137,7 @@ Block2_inst
 Block3
 Block3_inst
 (
-   .clk(clk), rst(rst),
+	.clk(clk), .rst(rst),
 	.valid_in(valid_in3),
 	//
 	.in0(Block2_out0),
@@ -170,7 +170,7 @@ Block3_inst
 Block4
 Block4_inst
 (
-   .clk(clk), rst(rst),
+	.clk(clk), .rst(rst),
 	.valid_in(valid_in4),
 	//
 	.in0(Block3_out0),
@@ -227,7 +227,7 @@ Block4_inst
 Block5
 Block5_inst
 (
-   .clk(clk), rst(rst),
+	.clk(clk), .rst(rst),
 	.valid_in(valid_in5),
 	//
 	.in0(Block4_out0),
