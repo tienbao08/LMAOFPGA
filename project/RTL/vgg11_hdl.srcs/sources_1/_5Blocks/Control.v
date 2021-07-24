@@ -24,53 +24,58 @@ module Control
 	always @(posedge clk or posedge rst) begin
 		if (rst) begin
 			count_clk = 17'd0;
+			valid_Block1 = 0;
+			valid_Block2 = 0;
+			valid_Block3 = 0;
+			valid_Block4 = 0;
+			valid_Block5 = 0;		
 		end
 		else begin
 			count_clk = count_clk + 17'd1;
-			if (count_clk < 17'd50402) begin
+			if ((count_clk > 17'd0) && (count_clk < 17'd50403)) begin
 				valid_Block1 = 1;
 				valid_Block2 = 0;
 				valid_Block3 = 0;
 				valid_Block4 = 0;
 				valid_Block5 = 0;
 			end
-			else if ((count_clk >= 17'd50402) && (count_clk < 17'd63060)) begin
+			else if ((count_clk >= 17'd50403) && (count_clk < 17'd63061)) begin
 				valid_Block1 = 1;
 				valid_Block2 = 1;
 				valid_Block3 = 0;
 				valid_Block4 = 0;
 				valid_Block5 = 0;
 			end
-			else if ((count_clk >= 17'd63060) && (count_clk < 17'd66254)) begin
+			else if ((count_clk >= 17'd63061) && (count_clk < 17'd66255)) begin
 				valid_Block1 = 1;
 				valid_Block2 = 1;
 				valid_Block3 = 1;
 				valid_Block4 = 0;
 				valid_Block5 = 0;
 			end
-			else if ((count_clk >= 17'd66254) && (count_clk < 17'd67068)) begin
+			else if ((count_clk >= 17'd66255) && (count_clk < 17'd67069)) begin
 				valid_Block1 = 1;
 				valid_Block2 = 1;
 				valid_Block3 = 1;
 				valid_Block4 = 1;
 				valid_Block5 = 0;
 			end
-			else if ((count_clk >= 17'd67068) && (count_clk < 17'd67280)) begin
+			else if ((count_clk >= 17'd67069) && (count_clk < 17'd67281)) begin
 				valid_Block1 = 1;
 				valid_Block2 = 1;
 				valid_Block3 = 1;
 				valid_Block4 = 1;
 				valid_Block5 = 1;
 			end
-			else if ((count_clk >= 17'd67280) && (count_clk < 17'd67329)) begin
+			else if ((count_clk >= 17'd67281) && (count_clk < 17'd67330)) begin
 				valid_Block1 = 1;
 				valid_Block2 = 1;
 				valid_Block3 = 1;
 				valid_Block4 = 1;
 				valid_Block5 = 1;
 			end
-			else if (count_clk >= 17'd67329) begin
-				count_clk = 17'd67280;
+			else if (count_clk >= 17'd67330) begin
+				count_clk = 17'd67281;
 			end
 		end
 	end
